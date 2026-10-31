@@ -1,0 +1,8 @@
+/* Original AI-generated horse-and-river mark paired with live brand typography. */
+.logo{gap:11px;align-items:center}
+.logo .logo-icon{display:grid;place-items:center;flex:0 0 58px;width:58px;height:58px}
+.logo .logo-icon img{display:block;width:58px;height:58px;object-fit:contain}
+.logo>span:last-child{font-family:Unbounded,sans-serif;font-size:15px;font-weight:600;letter-spacing:.01em;line-height:1.15}
+.logo small{font:700 8px/1.25 'DM Sans',sans-serif;letter-spacing:.19em;margin-top:6px;color:#a6303e}
+.footer-logo .logo-icon img{width:58px;height:58px}.footer-logo small{color:#e7a0a5}
+@media(max-width:700px){.logo{gap:8px;min-width:0}.logo .logo-icon{flex-basis:46px;width:46px;height:46px}.logo .logo-icon img{width:46px;height:46px}.logo>span:last-child{font-size:12px}.logo small{font-size:7px;letter-spacing:.13em;margin-top:4px}}

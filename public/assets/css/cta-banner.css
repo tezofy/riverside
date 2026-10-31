@@ -1,0 +1,20 @@
+/* Premium gradient title banner for the primary enquiry call to action. */
+.ref-cta{background:#f9f8f5;padding:70px 0 90px;color:#fff}
+.ref-cta .wrap{position:relative;isolation:isolate;overflow:hidden;display:flex;justify-content:space-between;align-items:center;gap:35px;padding:clamp(42px,5.5vw,76px) clamp(28px,5vw,70px);border:1px solid rgba(255,255,255,.18);border-radius:18px;background:radial-gradient(circle at 90% 0%,rgba(210,112,112,.42),transparent 38%),linear-gradient(115deg,#0b2034 0%,#1b3246 48%,#7c283a 100%);box-shadow:0 24px 50px rgba(13,32,45,.16)}
+.ref-cta .wrap:before,.ref-cta .wrap:after{content:"";position:absolute;z-index:-1;pointer-events:none;border:1px solid rgba(255,255,255,.15);border-radius:50%;width:420px;height:420px;right:6%;top:-220px;transform:rotate(-20deg)}
+.ref-cta .wrap:after{width:500px;height:500px;right:3%;top:-255px;border-color:rgba(255,255,255,.07)}
+.ref-cta .eyebrow.light{color:#f2c3c2;letter-spacing:.18em}.ref-cta h2{color:#fff;margin:18px 0 0;font-size:clamp(30px,3.4vw,46px);max-width:780px}
+.ref-cta .btn{flex-shrink:0;background:#fff;color:#183043;border:1px solid #fff;box-shadow:0 8px 22px rgba(0,0,0,.12);padding:19px 24px;transition:background .2s,transform .2s}
+.ref-cta .btn svg{color:#a6303e}.ref-cta .btn:hover{background:#fbeeed;transform:translateY(-2px)}.ref-cta .btn:focus-visible{outline:3px solid #fff;outline-offset:4px}
+@media(max-width:700px){.ref-cta{padding:50px 0 65px}.ref-cta .wrap{align-items:flex-start;flex-direction:column;gap:24px;padding:38px 25px;border-radius:14px}.ref-cta h2{font-size:clamp(27px,7vw,36px)}.ref-cta .wrap:before{right:-190px;top:-170px}.ref-cta .wrap:after{right:-230px;top:-210px}}
+@media(prefers-reduced-motion:reduce){.ref-cta .btn{transition:none}}
+
+/* Keep the same banner dimensions, now with an AI racing scene and readable gradient. */
+.ref-cta .wrap{background-image:linear-gradient(90deg,rgba(8,27,44,1) 0%,rgba(8,27,44,1) 57%,rgba(8,27,44,.78) 70%,rgba(8,27,44,.20) 100%),url('../images/cta-racing-group.jpg'),linear-gradient(115deg,#081b2c,#081b2c);background-size:cover,auto 125%,cover;background-position:center,right center,center;background-repeat:no-repeat}
+@media(max-width:700px){.ref-cta .wrap{background-image:linear-gradient(90deg,rgba(8,27,44,.96),rgba(11,31,48,.82) 47%,rgba(28,35,47,.38)),url('../images/cta-racing-group.jpg'),linear-gradient(115deg,#0b2034,#612b39);background-size:cover,auto 145%,cover;background-position:center,right center,center}}
+
+@media(min-width:1200px){.ref-cta .btn{margin-right:clamp(110px,10vw,150px)}}
+
+/* Seamless, wide-format racing image, fitted to the existing banner. */
+.ref-cta .wrap{background-image:linear-gradient(90deg,rgba(8,27,44,.08),rgba(8,27,44,.10)),url('../images/cta-racing-banner.jpg');background-size:cover,cover;background-position:center,right center;background-repeat:no-repeat}
+@media(max-width:700px){.ref-cta .wrap{background-image:linear-gradient(90deg,rgba(8,27,44,.74),rgba(8,27,44,.40)),url('../images/cta-racing-banner.jpg');background-size:cover,cover;background-position:center,right center}}

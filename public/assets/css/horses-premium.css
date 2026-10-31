@@ -1,0 +1,21 @@
+/* Premium editorial presentation; all six illustrative horses and landscapes are retained. */
+.ref-horse-grid.pop-horse-grid{column-gap:26px;row-gap:76px}
+.ref-horse-grid .pop-card{border:1px solid #e2e7e5;border-radius:21px;background:#fff;box-shadow:0 22px 54px rgba(16,40,50,.10),0 3px 12px rgba(16,40,50,.04);transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+.ref-horse-grid .pop-card:hover{transform:translateY(-8px);border-color:#d4c8c6;box-shadow:0 30px 65px rgba(16,40,50,.16),0 6px 18px rgba(16,40,50,.05)}
+.ref-horse-grid .horse-stage{height:355px}
+.ref-horse-grid .horse-stage .stage-frame{inset:14px 11px 0;border-radius:15px 15px 5px 5px;border:1px solid rgba(255,255,255,.7)}
+.ref-horse-grid .horse-stage>img{height:395px;filter:drop-shadow(0 14px 10px rgba(8,25,23,.27))}
+.ref-horse-grid .stage-index{top:29px;left:25px;padding:9px 12px;font-size:9px;letter-spacing:.12em;background:rgba(12,33,44,.78);border:1px solid rgba(255,255,255,.25);box-shadow:0 4px 15px rgba(0,0,0,.12)}
+.ref-horse-grid .pop-card-body{padding:24px 26px 24px!important;background:linear-gradient(180deg,#fff 0%,#fcfcfa 100%);border-radius:0 0 20px 20px}
+.ref-horse-grid .horse-card-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0!important}
+.ref-horse-grid .horse-card-kicker{color:#829196;font:700 9px/1.4 'DM Sans',sans-serif;letter-spacing:.13em;text-transform:uppercase}
+.ref-horse-grid .pop-status{flex:none;align-self:auto;background:#fbf0f0!important;color:#9e2d3b!important;border:1px solid #f1dddd;padding:7px 10px;font-size:9px!important;letter-spacing:.06em!important}
+.ref-horse-grid .pop-card-body h3{margin:22px 0 9px;font-size:18px;line-height:1.35;letter-spacing:-.025em;color:#102a3c}
+.ref-horse-grid .pop-card-body p{color:#63757d;line-height:1.7;margin-bottom:24px}
+.ref-horse-grid .pop-card-body a{padding-top:17px;border-color:#e9edeb;color:#9f2c3b;font-size:10px;letter-spacing:.08em}
+.ref-horse-grid .pop-card-body a span{width:34px;height:34px;border:1px solid #efdbdc;background:#fcf2f2;transition:background .25s,color .25s,transform .25s}
+.ref-horse-grid .pop-card-body a:hover span,.ref-horse-grid .pop-card-body a:focus-visible span{background:#a6303e;color:#fff!important;transform:translate(2px,-2px)}
+.ref-horse-grid .pop-card-body a:focus-visible{outline:2px solid #a6303e;outline-offset:4px}
+@media(max-width:900px){.ref-horse-grid .horse-stage{height:285px}.ref-horse-grid .horse-stage>img{height:325px}.ref-horse-grid .pop-card-body{padding:20px!important}.ref-horse-grid .pop-card-body h3{font-size:16px}.ref-horse-grid .horse-card-kicker{font-size:8px}}
+@media(max-width:700px){.ref-horse-grid.pop-horse-grid{row-gap:62px}.ref-horse-grid .horse-stage{height:305px}.ref-horse-grid .horse-stage>img{height:345px}.ref-horse-grid .pop-card-body{padding:22px!important}.ref-horse-grid .pop-card-body h3{font-size:18px}.ref-horse-grid .horse-card-kicker{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.ref-horse-grid .pop-card,.ref-horse-grid .pop-card-body a span{transition:none}}

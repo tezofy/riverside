@@ -1,0 +1,17 @@
+/* Editorial horse-racing value strip, directly beneath the hero. */
+.racing-values{position:relative;z-index:3;background:#faf9f5;padding:0 0 17px}.racing-values .wrap{position:relative}.racing-values-panel{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:#fff;border:1px solid #e8e9e5;border-radius:14px;box-shadow:0 16px 45px rgba(11,31,45,.1);transform:translateY(-28px);overflow:hidden}
+.racing-value{position:relative;display:flex;align-items:center;gap:15px;min-width:0;padding:25px 23px;transition:background .2s}.racing-value+.racing-value:before{content:'';position:absolute;left:0;top:25%;height:50%;width:1px;background:#e7eae8}.racing-value:hover{background:#fbf8f6}.racing-value-icon{width:58px;height:58px;flex:0 0 58px;display:grid;place-items:center;border:1px solid #ecdedb;border-radius:17px;background:linear-gradient(145deg,#fff,#f9f1ef);color:#163044}.racing-value-icon svg{width:38px;height:38px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}.racing-value-icon svg .accent{stroke:#ad3443;stroke-width:2}.racing-value-copy{min-width:0}.racing-value-label{display:block;font:700 8px/1.3 'DM Sans',sans-serif;letter-spacing:.12em;color:#a23b47;white-space:nowrap}.racing-value h3{font:600 13px/1.35 Unbounded,sans-serif;letter-spacing:-.025em;color:#122b3b;margin:7px 0 5px}.racing-value p{font:400 11px/1.45 'DM Sans',sans-serif;color:#6c7b80;margin:0}.racing-values+.collage-section{padding-top:80px}
+@media(max-width:1100px){.racing-value{gap:11px;padding:22px 14px}.racing-value-icon{width:50px;height:50px;flex-basis:50px;border-radius:14px}.racing-value-icon svg{width:33px;height:33px}.racing-value h3{font-size:11px}.racing-value p{font-size:10px}}
+@media(max-width:700px){.racing-values{padding-bottom:0}.racing-values-panel{grid-template-columns:1fr 1fr;transform:translateY(-18px);border-radius:12px}.racing-value{padding:17px 12px;align-items:flex-start}.racing-value:nth-child(3):before{display:none}.racing-value:nth-child(n+3){border-top:1px solid #e7eae8}.racing-value-icon{width:43px;height:43px;flex-basis:43px;border-radius:12px}.racing-value-icon svg{width:29px;height:29px}.racing-value-label{font-size:7px;letter-spacing:.08em}.racing-value h3{font-size:10px;margin:5px 0 4px}.racing-value p{font-size:10px}.racing-values+.collage-section{padding-top:55px}}
+@media(max-width:380px){.racing-values-panel{grid-template-columns:1fr}.racing-value+.racing-value:before{display:none}.racing-value:nth-child(n+2){border-top:1px solid #e7eae8}.racing-value{align-items:center}}
+@media(prefers-reduced-motion:reduce){.racing-value{transition:none}}
+
+/* AI-generated transparent racing icons. */
+.racing-value-icon img{display:block;width:44px;height:44px;object-fit:contain}
+@media(max-width:1100px){.racing-value-icon img{width:38px;height:38px}}
+@media(max-width:700px){.racing-value-icon img{width:33px;height:33px}}
+
+/* Matching AI-generated brand icons in the hero value strip. */
+.racing-value-icon img{width:48px;height:48px}
+@media(max-width:1100px){.racing-value-icon img{width:42px;height:42px}}
+@media(max-width:700px){.racing-value-icon img{width:36px;height:36px}}

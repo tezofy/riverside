@@ -1,0 +1,34 @@
+/* Section content reveals once as visitors scroll, without moving page backgrounds. */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior:smooth; }
+  .section-reveal { opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+  .section-reveal.section-in-view { opacity:1; transform:translateY(0); }
+
+  /* The mark crosses the name, turns, and returns as the lettering reappears. */
+  .header-outer .logo { position:relative; }
+  .header-outer .logo .logo-icon { position:relative; z-index:1; animation:riverside-horse-run 15s ease-in-out 2s infinite; }
+  .header-outer .logo > span:last-child { animation:riverside-name-reveal 15s ease-in-out 2s infinite; }
+  @keyframes riverside-horse-run {
+    0%, 61% { transform:translate(0,0) scaleX(1); }
+    64% { transform:translate(calc(var(--logo-run, 135px) * .25),-3px) scaleX(1); }
+    67% { transform:translate(calc(var(--logo-run, 135px) * .50),0) scaleX(1); }
+    70% { transform:translate(calc(var(--logo-run, 135px) * .75),-3px) scaleX(1); }
+    73% { transform:translate(var(--logo-run, 135px),0) scaleX(1); }
+    75%, 76% { transform:translate(var(--logo-run, 135px),0) scaleX(-1); }
+    79% { transform:translate(calc(var(--logo-run, 135px) * .75),-3px) scaleX(-1); }
+    82% { transform:translate(calc(var(--logo-run, 135px) * .50),0) scaleX(-1); }
+    85% { transform:translate(calc(var(--logo-run, 135px) * .25),-3px) scaleX(-1); }
+    88% { transform:translate(0,0) scaleX(-1); }
+    90%, 100% { transform:translate(0,0) scaleX(1); }
+  }
+  @keyframes riverside-name-reveal {
+    0%, 61% { clip-path:inset(0 0 0 0); }
+    73%, 76% { clip-path:inset(0 0 0 100%); }
+    88%, 100% { clip-path:inset(0 0 0 0); }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior:auto; }
+  .section-reveal, .section-reveal.section-in-view { opacity:1 !important; transform:none !important; transition:none !important; }
+  .header-outer .logo .logo-icon, .header-outer .logo > span:last-child { animation:none !important; clip-path:none !important; }
+}

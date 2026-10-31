@@ -1,0 +1,29 @@
+/* Unique bright equestrian backgrounds for each section. */
+.collage-section{background:#fff url('../images/light-story.jpg') right center/cover no-repeat}
+.ref-features{background:#fff url('../images/light-experience.jpg') right center/cover no-repeat}
+.ref-enquiry{background:#fff url('../images/light-enquiry.jpg') right center/cover no-repeat;color:#152b39}
+.ref-horses{background:#fff url('../images/light-horses.jpg') right center/cover no-repeat;color:#152b39}
+.ref-gallery{background:#fff url('../images/light-gallery.jpg') right center/cover no-repeat;color:#152b39}
+.ref-faq{background:#fff url('../images/light-faq.jpg') right center/cover no-repeat}
+.mission-section{background:#fff url('../images/light-about.jpg') right center/cover no-repeat}
+.our-values{background:#fff url('../images/light-values.jpg') right center/cover no-repeat;color:#152b39}
+.contact-section{background:#fff url('../images/light-contact.jpg') right center/cover no-repeat}
+/* Avoid reusing photos or dark colour blocks for secondary sections. */
+.ref-values,.ref-quote,.ref-cta,.about-horses,.inner-cta,.connect-banner{background:#fbfbf9;color:#152b39}
+.collage-copy,.ref-mission,.ref-faq-grid>div:first-child,.contact-form-area{position:relative;z-index:1}
+.collage-copy{padding:18px 20px;background:rgba(255,255,255,.82);border-radius:8px}
+.ref-center{position:relative;z-index:1}
+.ref-horses .ref-center h2,.ref-gallery .ref-center h2,.ref-quote h2,.ref-cta h2,.inner-cta h2,.connect-banner h2,.our-values h2{color:#152b39}
+.ref-horses .ref-center h2 em,.ref-gallery .ref-center h2 em,.ref-mission h2 em,.ref-form h2 em{color:#a6303e}
+.ref-horses .ref-center p,.ref-gallery .ref-center p,.ref-quote p,.inner-cta p,.connect-banner p,.our-values .center-heading p{color:#53636b}
+.ref-horses .ref-center .eyebrow,.ref-gallery .ref-center .eyebrow,.ref-enquiry .eyebrow.light,.ref-quote .eyebrow.light,.ref-cta .eyebrow.light,.our-values .eyebrow.light,.inner-cta .eyebrow.light,.connect-banner .eyebrow.light{color:#a6303e}
+.ref-horses .ref-disclaimer{color:#5e6c70}
+.ref-enquiry .ref-mission>p,.ref-enquiry .mission-point p{color:#53636b}
+.ref-mission-icon{border-color:#c46e77;color:#a6303e;background:rgba(255,255,255,.8)}
+.ref-form{background:rgba(255,255,255,.94);border:1px solid #e2e5e3;box-shadow:0 18px 50px rgba(12,35,50,.12);color:#152b39}
+.ref-form .ref-center p{color:#66757b}.ref-form-fields input,.ref-form-fields textarea{border-color:#d6dede;background:#fbfbfa}.ref-privacy{color:#68777b}.ref-form-message{color:#9f2536}
+.ref-quote span{color:#a6303e}.ref-values-grid>div{border-color:#dce1df}.our-values-grid article{border-color:#d3d9d6}.our-values-grid svg{color:#a6303e}.our-values-grid p{color:#5f6e73}
+.connect-banner .inline-light{color:#a6303e}.inner-cta .eyebrow.light{color:#a6303e}
+/* Keep the original image-free footer and existing brand navigation/hero. */
+footer{background-image:none}
+@media(max-width:700px){.collage-section,.ref-features,.ref-enquiry,.ref-horses,.ref-gallery,.ref-faq,.mission-section,.our-values,.contact-section{background-size:auto 100%;background-position:70% center}.collage-copy{padding:15px;background:rgba(255,255,255,.9)}.ref-mission{padding:15px;background:rgba(255,255,255,.85);border-radius:8px}.ref-horses .ref-center,.ref-gallery .ref-center{background:rgba(255,255,255,.75);border-radius:8px;padding:12px}}

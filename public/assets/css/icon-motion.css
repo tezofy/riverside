@@ -1,0 +1,21 @@
+/* Subtle motion for pictograms, brand marks and interface arrows. */
+@media (prefers-reduced-motion: no-preference) {
+  .icon-motion { transform-origin:center; transition:transform .3s cubic-bezier(.2,.7,.2,1); }
+  .icon-motion.icon-revealed { animation:riverside-icon-arrive .65s cubic-bezier(.2,.75,.2,1) var(--icon-delay, 0ms) backwards; }
+  @keyframes riverside-icon-arrive {
+    from { opacity:0; transform:translateY(9px) scale(.88); }
+    to { opacity:1; transform:translateY(0) scale(1); }
+  }
+  .racing-value:hover .icon-motion,
+  .our-values-grid article:hover .icon-motion,
+  .experience-card:hover .experience-icon .icon-motion,
+  .enquiry-point:hover .icon-motion,
+  .enquiry-card:hover .enquiry-card-icon .icon-motion,
+  .logo:hover .logo-icon .icon-motion { transform:translateY(-3px) scale(1.08); }
+  a:hover > svg.icon-motion, a:focus-visible > svg.icon-motion,
+  a:hover > span.icon-motion, a:focus-visible > span.icon-motion,
+  button:hover > span.icon-motion, button:focus-visible > span.icon-motion { transform:translate(3px,-2px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .icon-motion, .icon-motion.icon-revealed { animation:none !important; transition:none !important; }
+}

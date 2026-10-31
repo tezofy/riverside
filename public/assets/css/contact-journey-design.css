@@ -1,0 +1,11 @@
+/* A light, racing-themed call-to-action above the contact page footer. */
+.connect-banner{padding:55px 0 80px;background:#f8f9f7;color:#142d3c}
+.connect-banner .wrap{position:relative;overflow:hidden;isolation:isolate;min-height:260px;display:flex;align-items:center;padding:clamp(35px,4vw,60px) clamp(28px,5vw,68px);border:1px solid #e2e9e5;border-radius:16px;background:#fafbf8 url('../images/connect-journey-banner.jpg') right center/cover no-repeat;box-shadow:0 20px 45px rgba(15,42,51,.1)}
+.connect-banner .wrap>div{position:relative;z-index:1;max-width:65%}
+.connect-banner .eyebrow.light{color:#a6303e}
+.connect-banner h2{color:#132c3d;margin:17px 0 11px;line-height:1.2;font-size:clamp(30px,3.2vw,43px)}
+.connect-banner p{color:#4b636d;font-size:15px;line-height:1.7;margin:0;max-width:570px}
+.connect-banner .inline-light{display:inline-flex;align-items:center;justify-content:center;margin-top:22px;padding:16px 22px;border-radius:6px;background:#142e42;color:#fff;font:700 11px/1.3 'DM Sans',sans-serif;letter-spacing:.04em;text-transform:none;box-shadow:0 8px 18px rgba(15,42,51,.14);transition:background .2s,transform .2s}
+.connect-banner .inline-light:hover{background:#a6303e;color:#fff;transform:translateY(-2px)}.connect-banner .inline-light:focus-visible{outline:3px solid #a6303e;outline-offset:4px}
+@media(max-width:700px){.connect-banner{padding:45px 0 65px}.connect-banner .wrap{min-height:0;padding:26px;background-size:auto 100%;background-position:right center}.connect-banner .wrap>div{max-width:100%;padding:20px;background:rgba(255,255,255,.87);border-radius:10px}.connect-banner h2{font-size:clamp(27px,7vw,36px)}.connect-banner p{font-size:14px}}
+@media(prefers-reduced-motion:reduce){.connect-banner .inline-light{transition:none}}

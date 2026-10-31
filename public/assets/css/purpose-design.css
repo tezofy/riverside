@@ -1,0 +1,15 @@
+/* Our Purpose: left-oriented racing background and readable editorial panel. */
+.mission-section{background:#f8f9f7 url('../images/light-about-left.jpg') left center/cover no-repeat;padding:100px 0}
+.mission-section .mission-grid{align-items:center;gap:clamp(45px,6vw,86px)}
+.mission-section .mission-copy{position:relative;z-index:1;padding:clamp(25px,3vw,42px);background:rgba(255,255,255,.86);border:1px solid rgba(255,255,255,.85);border-radius:14px;box-shadow:0 18px 44px rgba(18,42,56,.08);backdrop-filter:blur(1px)}
+.mission-section .mission-copy h2{color:#142b3c;line-height:1.22;margin:19px 0 22px}
+.mission-section .mission-copy h2 em{color:#a6303e}
+.mission-section .mission-copy p{color:#4d626c;line-height:1.85}
+.mission-section .mission-copy .intro{color:#203d4c}
+.mission-section .mission-copy .btn{margin-top:8px}
+.mission-section .mission-photo{position:relative;isolation:isolate}
+.mission-section .mission-photo img{position:relative;z-index:1;width:100%;height:390px;object-fit:cover;border-radius:85px 12px 12px 12px;box-shadow:0 18px 40px rgba(18,42,56,.16)}
+.mission-section .mission-photo:after{z-index:0;border-radius:85px 12px 12px 12px}
+@media(max-width:700px){.mission-section{padding:70px 0;background-size:auto 100%;background-position:left center}.mission-section .mission-grid{gap:34px}.mission-section .mission-copy{padding:24px;background:rgba(255,255,255,.88)}.mission-section .mission-photo img{height:280px;border-radius:55px 10px 10px 10px}.mission-section .mission-photo:after{border-radius:55px 10px 10px 10px}}
+
+@media(min-width:701px){.mission-section .mission-copy h2{font-size:clamp(30px,2.65vw,40px)}}

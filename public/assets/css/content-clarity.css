@@ -1,0 +1,5 @@
+/* Keep the existing racing backdrop visible while making the expanded FAQs legible. */
+.ref-faq .ref-accordion{padding:8px 24px;background:rgba(255,255,255,.91);border:1px solid rgba(223,230,227,.85);border-radius:14px;box-shadow:0 14px 38px rgba(20,42,56,.07)}
+.ref-faq .ref-accordion summary{color:#152e3f;line-height:1.55}
+.ref-faq .ref-accordion details p{color:#4c626c;font-size:14px;line-height:1.8}
+@media(max-width:700px){.ref-faq .ref-accordion{padding:6px 17px;background:rgba(255,255,255,.94)}.ref-faq .ref-accordion details p{font-size:13px}}

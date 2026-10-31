@@ -1,0 +1,26 @@
+/* OUR HORSES: refined racing editorial cards, keeping the six distinct pop-out portraits. */
+.ref-horses{background:#f9faf7 url('../images/light-horses.jpg') no-repeat right top;background-size:100% auto;padding:105px 0 95px}
+.ref-horses .ref-center{position:relative;max-width:760px;padding:22px 30px;background:rgba(255,255,255,.90);border:1px solid rgba(226,232,228,.8);border-radius:16px;box-shadow:0 12px 38px rgba(20,42,56,.05)}
+.ref-horses .ref-center h2{margin:16px 0 12px}.ref-horses .ref-center p{margin:0;color:#50646c;font-size:14px;line-height:1.75}
+.ref-horse-grid.pop-horse-grid{column-gap:25px;row-gap:68px;margin-top:76px}
+.ref-horse-grid .pop-card{border:1px solid #dce5e1;border-radius:18px;background:#fff;box-shadow:0 18px 40px rgba(18,43,52,.11),0 4px 10px rgba(18,43,52,.04)}
+.ref-horse-grid .pop-card:hover{box-shadow:0 25px 48px rgba(18,43,52,.18),0 7px 15px rgba(18,43,52,.06)}
+.ref-horse-grid .horse-stage{height:335px}
+.ref-horse-grid .horse-stage .stage-frame{inset:18px 12px 0;border-radius:12px 12px 4px 4px;border:1px solid rgba(255,255,255,.85)}
+.ref-horse-grid .horse-stage>img{height:370px}
+.ref-horse-grid .stage-index{top:34px;left:25px;padding:8px 11px;background:rgba(12,36,45,.8);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(4px);color:#fff;letter-spacing:.12em}
+.ref-horse-grid .pop-card-body{padding:24px 26px 22px!important;border-radius:0 0 18px 18px;background:linear-gradient(180deg,#fff 5%,#fbfcfa)}
+.ref-horse-grid .pop-status{background:#f9eded!important;color:#9e2d3b!important;font-weight:700;border:1px solid #f0d9da;padding:7px 11px}
+.ref-horse-grid .pop-card-body h3{font-size:17px;line-height:1.4;color:#102c3d;margin:17px 0 8px}
+.ref-horse-grid .pop-card-body p{font-size:13px;line-height:1.7;color:#62767c;margin-bottom:22px}
+.ref-horse-grid .pop-card-body a{border-color:#e3ebe7;color:#a12f3c;letter-spacing:.09em;transition:color .2s}
+.ref-horse-grid .pop-card-body a:hover{color:#102c3d}
+.ref-horse-grid .pop-card-body a span{width:30px;height:30px;display:grid;place-items:center;border-radius:50%;background:#f7ecec;color:#a12f3c!important}
+.ref-horses .ref-disclaimer{max-width:max-content;margin:28px auto 0;padding:10px 17px;background:rgba(255,255,255,.83);border:1px solid #e5eae6;border-radius:50px;text-align:center;color:#61716f;font-size:11px;line-height:1.5}
+@media(max-width:900px){.ref-horse-grid .horse-stage{height:280px}.ref-horse-grid .horse-stage>img{height:315px}.ref-horse-grid .pop-card-body{padding:20px!important}}
+@media(max-width:700px){.ref-horses{padding:70px 0;background-size:auto 500px;background-position:65% top}.ref-horses .ref-center{padding:19px 16px}.ref-horse-grid.pop-horse-grid{row-gap:55px;margin-top:65px}.ref-horse-grid .horse-stage{height:300px}.ref-horse-grid .horse-stage>img{height:337px}.ref-horse-grid .pop-card-body{padding:23px!important}.ref-horses .ref-disclaimer{border-radius:12px}}
+@media(prefers-reduced-motion:reduce){.ref-horse-grid .pop-card-body a{transition:none}}
+
+/* Softly blend the racing background into the section. */
+.ref-horses{background-image:linear-gradient(to bottom,rgba(249,250,247,0) 280px,#f9faf7 570px),url('../images/light-horses.jpg');background-size:100% 100%,100% auto;background-position:center,right top;background-repeat:no-repeat}
+@media(max-width:700px){.ref-horses{background-image:linear-gradient(to bottom,rgba(249,250,247,0) 230px,#f9faf7 500px),url('../images/light-horses.jpg');background-size:100% 100%,auto 500px;background-position:center,65% top}}

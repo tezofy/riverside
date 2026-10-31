@@ -1,0 +1,15 @@
+/* About Riverside: layered photo collage and refined editorial copy. */
+.collage-section .collage{isolation:isolate}
+.collage-section .collage-accent{z-index:0;inset:20px 45% -14px -4px;background:#ead8d2;transform:rotate(-3deg)}
+.collage-section .collage img{position:relative;z-index:1;box-shadow:0 12px 30px rgba(18,38,48,.12)}
+.collage-section .collage-tall{object-position:center center}
+.collage-section .collage-badge{z-index:2;transition:transform .2s ease,box-shadow .2s ease}
+.collage-section .collage-badge:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(18,38,48,.25)}
+.collage-section .collage-badge:focus-visible{outline:3px solid #a6303e;outline-offset:4px}
+.collage-section .collage-copy{padding:30px;background:rgba(255,255,255,.88);border:1px solid rgba(231,229,222,.72);border-radius:14px;box-shadow:0 12px 40px rgba(18,38,48,.05)}
+.collage-section .collage-copy h2{line-height:1.24;margin:19px 0 22px}
+.collage-section .collage-copy p{line-height:1.85;color:#536770}
+.collage-section .collage-copy .intro{color:#263f4b}
+.collage-section .collage-copy .btn{margin-top:8px}
+@media(max-width:700px){.collage-section .collage-copy{padding:23px}.collage-section .collage{padding:0 6px}.collage-section .collage-accent{inset:14px 45% -10px -2px}}
+@media(prefers-reduced-motion:reduce){.collage-section .collage-badge{transition:none}}

@@ -1,0 +1,20 @@
+/* A clean, image-free card system over the existing racing background. */
+.ref-features{position:relative;isolation:isolate;padding:115px 0;background-image:linear-gradient(90deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.82) 52%,rgba(255,255,255,.38) 100%),url('../images/light-experience.jpg');background-size:cover,cover;background-position:center,right center;background-repeat:no-repeat}
+.ref-features .ref-center{max-width:720px}.ref-features .ref-center>p{color:#596a70;max-width:560px;margin:0 auto;line-height:1.8}
+.experience-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:54px}
+.experience-card{display:flex;flex-direction:column;min-height:260px;padding:26px 23px 22px;background:rgba(255,255,255,.94);border:1px solid rgba(19,43,57,.1);border-radius:10px;box-shadow:0 15px 36px rgba(15,36,49,.075);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.experience-card:hover{transform:translateY(-6px);box-shadow:0 22px 40px rgba(15,36,49,.14);border-color:rgba(166,48,62,.3)}
+.experience-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}.experience-icon{display:grid;place-items:center;width:58px;height:58px;border-radius:15px;background:#f8eeee;color:#a6303e}.experience-icon svg{width:30px;height:30px;stroke:currentColor;stroke-width:1.55;stroke-linecap:round;stroke-linejoin:round;fill:none}.experience-number{font:500 11px 'DM Sans',sans-serif;letter-spacing:.12em;color:#a1aeb0;padding-top:4px}
+.experience-card h3{font:600 14px/1.45 Unbounded,sans-serif;letter-spacing:-.025em;color:#142b3a;margin:24px 0 10px}.experience-card p{color:#65767c;font:400 13px/1.75 'DM Sans',sans-serif;margin:0 0 22px}.experience-card a{margin-top:auto;padding-top:15px;border-top:1px solid #e8edeb;display:flex;justify-content:space-between;align-items:center;gap:8px;color:#9e2f3e;font:700 10px/1.4 'DM Sans',sans-serif;letter-spacing:.04em;text-transform:uppercase}.experience-card a span{font-size:16px;line-height:1}.experience-card a:focus-visible{outline:2px solid #a6303e;outline-offset:4px}
+@media(max-width:1000px){.experience-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.experience-card{min-height:225px}}
+@media(max-width:700px){.ref-features{padding:75px 0;background-position:center,65% center}.experience-cards{gap:12px;margin-top:35px}.experience-card{padding:20px 16px;min-height:245px}.experience-icon{width:50px;height:50px;border-radius:13px}.experience-icon svg{width:25px;height:25px}.experience-card h3{font-size:12px;margin:20px 0 8px}.experience-card p{font-size:12px}.experience-card a{font-size:9px}}
+@media(max-width:380px){.experience-cards{grid-template-columns:1fr}.experience-card{min-height:0}}
+@media(prefers-reduced-motion:reduce){.experience-card{transition:none}}
+
+/* The experience image is mirrored and placed on the left; card text remains unchanged. */
+.ref-features{background-image:linear-gradient(90deg,rgba(255,255,255,.18) 0%,rgba(255,255,255,.68) 44%,rgba(255,255,255,.96) 100%),url('../images/light-experience-left.jpg');background-size:cover,cover;background-position:center,left center;background-repeat:no-repeat}
+@media(max-width:700px){.ref-features{background-position:center,left center}}
+
+/* Experience image on the right. */
+.ref-features{background-image:linear-gradient(90deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.68) 56%,rgba(255,255,255,.18) 100%),url('../images/light-experience.jpg');background-size:cover,cover;background-position:center,right center;background-repeat:no-repeat}
+@media(max-width:700px){.ref-features{background-position:center,right center}}

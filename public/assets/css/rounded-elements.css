@@ -1,0 +1,23 @@
+/* Fully rounded calls to action and circular icon shapes across all pages. */
+.nav-wrap .nav-action,
+a.btn,
+button.btn,
+.ref-cta .btn,
+.inner-cta .btn,
+.about-horses .section-heading .btn,
+.enquiry-section .enquiry-submit,
+.site-footer .footer-invite a,
+.connect-banner .inline-light,
+.new-home-hero .hero-pause{border-radius:999px}
+.racing-value-icon,
+.experience-icon,
+.enquiry-card-icon,
+.enquiry-point-icon,
+.our-values .value-icon,
+.nav-wrap .menu-toggle,
+.site-footer .footer-social-icon,
+.collage-section .collage-badge{border-radius:50%}
+.ref-horse-grid .pop-status,
+.ref-horse-grid .stage-index,
+.next-card-visual .next-tag{border-radius:999px}
+@media(max-width:700px){.racing-value-icon,.experience-icon,.enquiry-card-icon,.enquiry-point-icon,.our-values .value-icon,.nav-wrap .menu-toggle{border-radius:50%}}

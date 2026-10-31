@@ -1,0 +1,50 @@
+/* Three original transparent PNGs emerge from dimensional, brand-coloured cards. */
+.ref-horses{background:radial-gradient(ellipse at 12% 12%,#dce9f2 0%,transparent 34%),radial-gradient(ellipse at 88% 80%,#f7dfe0 0%,transparent 37%),linear-gradient(135deg,#f8fafb,#fbf7f2);overflow:hidden}
+.ref-horses .ref-center h2{color:#152b39}.ref-horses .ref-center h2 em{color:#a6303e}.ref-horses .ref-center p{color:#667781}.ref-horses .ref-center .eyebrow{color:#a6303e}.ref-horses .ref-disclaimer{color:#758287}
+.ref-horse-grid.pop-horse-grid{gap:25px;margin-top:75px;align-items:stretch}
+.ref-horse-grid .pop-card{overflow:visible;position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid #e5e8e7;border-radius:18px;box-shadow:0 22px 45px rgba(16,36,55,.12),0 4px 12px rgba(16,36,55,.05);transition:transform .3s ease,box-shadow .3s ease}
+.ref-horse-grid .pop-card:hover{transform:translateY(-9px);box-shadow:0 30px 55px rgba(16,36,55,.18),0 7px 18px rgba(16,36,55,.08)}
+.horse-stage{height:325px;position:relative;isolation:isolate;margin:0;padding:0!important}
+.horse-stage .stage-frame{position:absolute;inset:25px 12px 0;padding:0!important;border-radius:13px 13px 5px 5px;overflow:hidden;box-shadow:inset 0 0 0 1px #ffffff25}
+.stage-one .stage-frame{background:radial-gradient(circle at 55% 24%,#7898a6,#304c63 48%,#10283d 100%)}
+.stage-two .stage-frame{background:radial-gradient(circle at 55% 22%,#cc9290,#9e5260 45%,#562a3f 100%)}
+.stage-three .stage-frame{background:radial-gradient(circle at 50% 20%,#a1bdbb,#5a8586 45%,#244556 100%)}
+.horse-stage .stage-frame:after{content:'';position:absolute;inset:0;background:linear-gradient(130deg,#ffffff1c,transparent 40%),radial-gradient(ellipse at center 120%,#061b28aa,transparent 55%)}
+.ref-horse-grid .horse-stage img{position:absolute;z-index:2;bottom:-1px;left:50%;transform:translateX(-50%);width:auto;max-width:100%;height:360px;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 13px 12px rgba(0,0,0,.34));transition:transform .35s ease}
+.ref-horse-grid .pop-card:hover .horse-stage img{transform:translateX(-50%) translateY(-7px) scale(1.025)}
+.stage-index{position:absolute;z-index:1;top:42px;left:28px;color:#ffffffb5;font:600 9px 'DM Sans',sans-serif;letter-spacing:.14em}
+.ref-horse-grid .pop-card-body{position:relative;z-index:3;padding:25px!important;background:#fff;border-radius:0 0 18px 18px;flex:1;display:flex;flex-direction:column}
+.pop-status{align-self:flex-start;color:#9e2d3b!important;background:#f9eeee;border-radius:50px;padding:7px 10px;font-size:9px!important;letter-spacing:.08em!important}
+.pop-status i{display:inline-block;width:6px;height:6px;background:#b12e3d;border-radius:50%;margin-right:5px}
+.ref-horse-grid .pop-card-body h3{font:600 17px/1.4 Unbounded,sans-serif;margin:15px 0 8px;color:#122a3b}
+.ref-horse-grid .pop-card-body p{font-size:13px;line-height:1.7;color:#738188;margin:0 0 20px;min-height:44px}
+.pop-card-body a{margin-top:auto;border-top:1px solid #ebeeeb;padding-top:17px;display:flex;justify-content:space-between;align-items:center;color:#a12f3c;font:700 10px 'DM Sans',sans-serif;letter-spacing:.07em;text-transform:uppercase}
+.pop-card-body a span{font:18px Arial,sans-serif!important;letter-spacing:0!important;color:#a12f3c!important}
+@media(max-width:900px){.ref-horse-grid.pop-horse-grid{gap:15px}.horse-stage{height:270px}.ref-horse-grid .horse-stage img{height:305px}.ref-horse-grid .pop-card-body{padding:19px!important}.ref-horse-grid .pop-card-body h3{font-size:15px}}
+@media(max-width:700px){.ref-horse-grid.pop-horse-grid{grid-template-columns:1fr;gap:55px;margin-top:65px;max-width:440px;margin-left:auto;margin-right:auto}.horse-stage{height:300px}.ref-horse-grid .horse-stage img{height:337px}.ref-horse-grid .pop-card-body{padding:24px!important}.ref-horse-grid .pop-card-body h3{font-size:17px}.ref-horse-grid .pop-card-body p{min-height:0}}
+@media(prefers-reduced-motion:reduce){.ref-horse-grid .pop-card,.ref-horse-grid .horse-stage img{transition:none}}
+.ref-horse-grid .stage-index{color:#ffffffc9;font:600 9px 'DM Sans',sans-serif;letter-spacing:.14em}
+/* Natural racecourse environments and more refined dimensional framing. */
+.ref-horses{background:radial-gradient(ellipse at 13% 12%,#e5eee9,transparent 38%),radial-gradient(ellipse at 88% 80%,#f2e5df,transparent 37%),linear-gradient(135deg,#f8faf8,#faf7f2)}
+.ref-horse-grid .pop-card{border:1px solid #e7e3dc;border-radius:20px;box-shadow:0 22px 48px rgba(19,37,38,.12),0 5px 15px rgba(19,37,38,.05)}
+.ref-horse-grid .pop-card:hover{box-shadow:0 30px 60px rgba(19,37,38,.2),0 7px 20px rgba(19,37,38,.08)}
+.horse-stage .stage-frame{inset:25px 12px 0;border-radius:15px 15px 6px 6px;border:1px solid #fff8;box-shadow:inset 0 0 0 1px #1b3a3420}
+.stage-one .stage-frame{background:linear-gradient(180deg,rgba(5,29,22,.08),rgba(6,29,24,.25)),url('../images/card-nature-1.jpg') center/cover no-repeat}
+.stage-two .stage-frame{background:linear-gradient(180deg,rgba(13,30,24,.08),rgba(9,29,22,.27)),url('../images/card-nature-2.jpg') center/cover no-repeat}
+.stage-three .stage-frame{background:linear-gradient(180deg,rgba(21,34,22,.05),rgba(16,37,24,.25)),url('../images/card-nature-3.jpg') center/cover no-repeat}
+.horse-stage .stage-frame:after{background:linear-gradient(180deg,transparent 45%,rgba(7,28,20,.31) 100%)}
+.ref-horse-grid .stage-index{padding:7px 10px;border-radius:30px;background:rgba(9,30,25,.62);backdrop-filter:blur(4px);color:#fff}
+.ref-horse-grid .horse-stage img{filter:drop-shadow(0 12px 9px rgba(3,19,13,.29))}
+.ref-horse-grid .pop-card-body{border-radius:0 0 20px 20px;background:linear-gradient(180deg,#fff,#fbfaf7)}
+.pop-status{background:#f7f1e5!important;color:#8d5d35!important}.pop-status i{background:#a4353d}
+/* A second row of unique, nature-framed horse portraits. */
+.ref-horse-grid.pop-horse-grid{row-gap:65px}
+.stage-four .stage-frame{background:linear-gradient(180deg,rgba(5,29,22,.08),rgba(6,29,24,.25)),url('../images/card-nature-4.jpg') center/cover no-repeat}
+.stage-five .stage-frame{background:linear-gradient(180deg,rgba(13,30,24,.08),rgba(9,29,22,.27)),url('../images/card-nature-5.jpg') center/cover no-repeat}
+.stage-six .stage-frame{background:linear-gradient(180deg,rgba(21,34,22,.05),rgba(16,37,24,.25)),url('../images/card-nature-6.jpg') center/cover no-repeat}
+@media(max-width:700px){.ref-horse-grid.pop-horse-grid{row-gap:55px}}
+
+/* Reliable embedded background images for the second row, above the CSS fallback. */
+.ref-horse-grid .horse-stage .stage-frame img.stage-background{position:absolute;inset:0;z-index:0;display:block;width:100%;max-width:none;height:100%;object-fit:cover;object-position:center;transform:none;filter:none;transition:none}
+.ref-horse-grid .pop-card:hover .horse-stage .stage-frame img.stage-background{transform:none}
+.horse-stage .stage-frame:after{z-index:1;pointer-events:none}

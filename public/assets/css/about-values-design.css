@@ -1,0 +1,16 @@
+/* Four brand-coloured AI value icons, presented as individual editorial cards. */
+.our-values{padding:85px 0 95px}
+.our-values .center-heading{max-width:690px;margin:0 auto;padding:12px 20px;border-radius:12px;background:rgba(255,255,255,.82)}
+.our-values .center-heading h2{margin:16px 0 10px}
+.our-values .center-heading p{margin:0;color:#4d626b}
+.our-values .our-values-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:38px}
+.our-values .our-values-grid article,.our-values .our-values-grid article:last-child,.our-values .our-values-grid article:nth-child(2){position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;min-height:260px;padding:28px 22px 25px;background:rgba(255,255,255,.95);border:1px solid #e5e9e7;border-radius:14px;box-shadow:0 16px 35px rgba(18,40,54,.09);transition:transform .25s ease,box-shadow .25s ease}
+.our-values .our-values-grid article:hover{transform:translateY(-5px);box-shadow:0 22px 40px rgba(18,40,54,.15)}
+.our-values .value-icon{width:100px;height:100px;display:grid;place-items:center;border-radius:50%;background:#f6f8f8;border:1px solid #e8edec;flex-shrink:0}
+.our-values .value-icon img{width:72px;height:72px;object-fit:contain;display:block}
+.our-values .our-values-grid h3{color:#152e3e;font:600 16px/1.4 Unbounded,sans-serif;margin:21px 0 10px}
+.our-values .our-values-grid p{color:#536771;font:400 13px/1.65 'DM Sans',sans-serif;margin:0;max-width:220px}
+@media(max-width:900px){.our-values .our-values-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}}
+@media(max-width:700px){.our-values{padding:65px 0 75px}.our-values .our-values-grid{gap:12px;margin-top:28px}.our-values .our-values-grid article,.our-values .our-values-grid article:last-child,.our-values .our-values-grid article:nth-child(2){padding:22px 12px;min-height:225px}.our-values .value-icon{width:82px;height:82px}.our-values .value-icon img{width:60px;height:60px}.our-values .our-values-grid h3{font-size:13px;margin:17px 0 8px}.our-values .our-values-grid p{font-size:12px}}
+@media(max-width:340px){.our-values .our-values-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.our-values .our-values-grid article{transition:none}}
