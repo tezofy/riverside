@@ -1,65 +1,95 @@
-# Riverside Racing Syndicate — ওয়েবসাইট ফাইল
+# Riverside Racing Syndicate
 
-এই ফোল্ডারে ওয়েবসাইটের তিনটি পেজ, CSS, JavaScript, ছবি ও ফন্ট আলাদা করে সাজানো আছে। এটি একটি static site; npm বা কোনো build framework প্রয়োজন নেই।
+A responsive, three-page static website for a thoroughbred racing syndicate. The pages, styles, scripts, images, and fonts are organized into separate files. No npm dependencies or build framework are required.
 
-## ফোল্ডারের গঠন
+## Project structure
 
 ```text
 public/
-├── index.html                 # Home
-├── about.html                 # About
-├── contact.html               # Contact
+├── index.html                 # Home page
+├── about.html                 # About page
+├── contact.html               # Contact page
 └── assets/
-    ├── css/                   # পেজ ও সেকশনভিত্তিক স্টাইল
-    ├── js/                    # ফর্ম, নেভিগেশন, স্লাইডার ও অ্যানিমেশন
-    ├── images/                # ছবি ও AI আইকন
-    └── fonts/                 # ব্যবহৃত ফন্ট
-licenses/                      # ফন্টের লাইসেন্স
+    ├── css/                   # Page and section styles
+    ├── js/                    # Form, navigation, slider, and animations
+    ├── images/                # Images and AI-generated icons
+    └── fonts/                 # Locally hosted fonts
+licenses/                      # Font license files
 README.md
 ```
 
-CSS ফাইলগুলো ডিজাইনের বিভিন্ন স্তর ও আপডেট অনুযায়ী সাজানো। প্রতিটি HTML ফাইলে stylesheets যে ক্রমে আছে, সেই ক্রম বজায় রাখুন; পরের ফাইল আগের স্টাইল সংশোধন করতে পারে। `horses-premium.css`, `experience-icons-upgrade.css`, `scroll-and-logo-motion.css` এবং `icon-motion.css` সর্বশেষ ডিজাইন ও অ্যানিমেশনগুলোর অংশ।
+The CSS files represent different design layers and updates. Keep the stylesheet order in each HTML file: later files may override earlier styles. The latest designs and animations include `horses-premium.css`, `experience-icons-upgrade.css`, `scroll-and-logo-motion.css`, and `icon-motion.css`.
 
-## GitHub repository-তে আপলোড
+## Upload to GitHub
 
-1. ZIP আনজিপ করুন।
-2. GitHub-এ একটি নতুন repository তৈরি করুন।
-3. আনজিপ করা ফোল্ডারের **ভেতরের** `public`, `licenses` ও `README.md` repository-র মূল স্তরে আপলোড করুন। ZIP ফাইলটি সরাসরি repository-তে আপলোড করবেন না।
-4. পরিবর্তনগুলো `main` branch-এ commit করুন। অন্য branch হলে Cloudflare-এ সেটি নির্বাচন করুন।
+1. Extract the ZIP file.
+2. Create a new GitHub repository.
+3. Upload the `public` and `licenses` folders and `README.md` from inside the extracted folder to the root of the repository. Do not upload the ZIP itself as the website.
+4. Commit the files to the `main` branch. If you use a different branch, select that branch in Cloudflare Pages.
 
-## Cloudflare Pages-এ লাইভ করুন
+## Deploy with Cloudflare Pages
 
-1. Cloudflare dashboard-এ **Workers & Pages → Create application → Pages → Import an existing Git repository** নির্বাচন করুন।
-2. GitHub সংযুক্ত করে এই repository নির্বাচন করুন।
-3. Build settings:
+1. In the Cloudflare dashboard, go to **Workers & Pages → Create application → Pages → Import an existing Git repository**.
+2. Connect GitHub and select the repository.
+3. Use these build settings:
 
-| সেটিং | মান |
+| Setting | Value |
 | --- | --- |
 | Framework preset | None |
-| Production branch | `main` (অথবা আপনার branch) |
+| Production branch | `main` (or your chosen branch) |
 | Build command | `exit 0` |
 | Build output directory | `public` |
-| Root directory | খালি / repository root |
+| Root directory | Leave blank / repository root |
 
-4. **Save and Deploy** চাপুন। সফল হলে `*.pages.dev` ঠিকানা পাওয়া যাবে। GitHub-এ নতুন commit করলে Cloudflare আবার deploy করবে।
-5. নিজস্ব ডোমেইন ব্যবহার করতে Pages project-এর **Custom domains** থেকে সেটি যুক্ত করুন এবং Cloudflare-এর নির্দেশনা অনুযায়ী DNS কনফিগার করুন।
+4. Select **Save and Deploy**. Once the deployment succeeds, Cloudflare will provide a `*.pages.dev` address. Subsequent GitHub commits trigger new deployments.
+5. To use your own domain, open **Custom domains** in the Pages project and follow Cloudflare's DNS instructions.
 
-Cloudflare নির্দেশনা: https://developers.cloudflare.com/pages/framework-guides/deploy-anything/
+Cloudflare documentation: https://developers.cloudflare.com/pages/framework-guides/deploy-anything/
 
-## পরিবর্তন ও প্রকাশের আগে করণীয়
+## Before publishing
 
-- **Contact ও Home ফর্ম:** বর্তমানে কোনো inbox-এ বার্তা পাঠায় না। Formspree বা সামঞ্জস্যপূর্ণ form service-এ ফর্ম তৈরি ও প্রাপক ইমেইল যাচাই করে `public/assets/js/app.js`-এ `const FORM_ENDPOINT = '';` খুঁজে আপনার HTTPS endpoint বসান। যেমন `const FORM_ENDPOINT = 'https://formspree.io/f/your-form-id';`—এটি উদাহরণ, আপনার আসল endpoint ব্যবহার করুন। প্রকাশের পর দুটি ফর্ম ও ইমেইল ডেলিভারি পরীক্ষা করুন। প্রয়োজন অনুযায়ী privacy notice, consent ও spam protection যুক্ত করুন। গোপন API key browser-side ফাইলে রাখবেন না।
-- **Social links:** footer-এর Facebook, Instagram, YouTube ও X placeholder; আসল URL পাওয়া গেলে তিনটি HTML পেজেই উপযুক্ত লিংক যুক্ত করুন।
-- **ছবি ও ব্র্যান্ডিং:** ঘোড়ার ছবিগুলো AI-generated illustration; এগুলো আসল syndicate horse নয়। Riverside নাম, লোগো এবং ঘোড়ার স্ট্যাটাস placeholder/concept; প্রকাশের আগে ক্লায়েন্টের অনুমোদিত পরিচয়, ছবি ও তথ্য যোগ করুন।
-- **SEO:** তিন পেজের নিজস্ব HTML URL ও description আছে। প্রকাশের আগে চূড়ান্ত domain, canonical URL, sitemap, meta descriptions ও ব্র্যান্ড তথ্য পর্যালোচনা করুন।
-- **সম্পাদনা:** পেজের কনটেন্ট HTML-এ, ডিজাইন `assets/css/`-এ, ফাংশন `assets/js/`-এ এবং ছবি `assets/images/`-এ পরিবর্তন করুন। ফাইলের নাম পরিবর্তন করলে HTML/CSS-এর path-ও বদলাতে হবে। Header/footer প্রতিটি HTML পেজে আলাদা, তাই পরিবর্তন তিন জায়গাতেই মিলিয়ে করুন।
+### Connect the enquiry forms
 
-## লোকাল প্রিভিউ
+The Home and Contact forms are not currently connected to an inbox. Create a form with Formspree or a compatible service and verify the receiving email address. Then open `public/assets/js/app.js`, find:
 
-টার্মিনালে repository folder থেকে:
+```js
+const FORM_ENDPOINT = '';
+```
+
+Replace the empty value with your own verified HTTPS endpoint. For example:
+
+```js
+const FORM_ENDPOINT = 'https://formspree.io/f/your-form-id';
+```
+
+The URL above is only an example, not a working endpoint. After deployment, test both forms and confirm email delivery. Add an appropriate privacy notice, consent mechanism, and spam protection as needed. Do not put secret API keys in browser-side files.
+
+### Social links
+
+The Facebook, Instagram, YouTube, and X icons in the footer are placeholders. Add the actual profile URLs to all three HTML pages when available.
+
+### Branding and imagery
+
+The horse images are AI-generated illustrations, not actual syndicate horses. The Riverside name, logo, and horse statuses are concepts or placeholders. Replace or approve these assets and verify the content before publishing.
+
+### SEO
+
+Each page has its own HTML URL and description. Review the final domain, canonical URLs, sitemap, meta descriptions, and brand information before launch.
+
+## Editing
+
+- Edit page content in the three HTML files under `public/`.
+- Edit design styles in `public/assets/css/`.
+- Edit functionality in `public/assets/js/`.
+- Replace images in `public/assets/images/`. If a filename changes, update its references in the HTML and CSS files.
+- The header and footer are repeated in each HTML page. Apply any changes consistently across all three pages.
+
+## Local preview
+
+From the repository folder, run:
 
 ```bash
 python3 -m http.server 8000 --directory public
 ```
 
-তারপর `http://localhost:8000` খুলুন।
+Then open `http://localhost:8000` in your browser.
