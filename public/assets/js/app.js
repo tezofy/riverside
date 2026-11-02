@@ -5,7 +5,7 @@
   /* Enquiry form
      FORM_ENDPOINT must be set to the form-handling URL before launch
      (for example a Formspree endpoint). See SETUP.md. */
-  var FORM_ENDPOINT = '';
+  var FORM_ENDPOINT = 'https://formspree.io/f/mjyypjwn';
 
   var form = document.querySelector('#enquiry-form');
   if (!form) return;

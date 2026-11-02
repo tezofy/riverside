@@ -39,16 +39,17 @@ README.md
 
 ## Enquiry forms
 
-The Home and Contact forms are **not yet connected to an inbox**. Create a form with Formspree (or a compatible service), verify the receiving address, then set the endpoint in `public/assets/js/app.js`:
+The Home and Contact forms are connected to a **Formspree demo endpoint** (`public/assets/js/app.js`):
 
 ```js
-var FORM_ENDPOINT = 'https://formspree.io/f/your-form-id';
+var FORM_ENDPOINT = 'https://formspree.io/f/mjyypjwn';
 ```
 
-The value is empty until this is done, so visitors see a "temporarily unavailable" message. Test both forms after deployment and confirm the email arrives. Do not place secret API keys in browser-side files.
+Enquiries from this build go to the demo inbox of the developer's Formspree account. **Before launch, replace this with the client's own Formspree form** (or another service that accepts a POST), using the client's verified email address. Then test both forms and confirm that the email arrives. Do not place secret API keys in browser-side files.
 
 ## Before publishing
 
+- **Enquiry form:** switch `FORM_ENDPOINT` from the demo endpoint to the client's own endpoint.
 - **Client details:** legal entity name, registered address, registration number, jurisdiction, and contact email/phone (footer, privacy policy and structured data).
 - **Privacy policy:** `public/privacy.html` is a draft and needs legal review.
 - **Social links:** footer Facebook, Instagram, YouTube and X icons are placeholders. Add real profile URLs to all pages when available.
