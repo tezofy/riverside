@@ -1,0 +1,19 @@
+/* ==========================================================================
+   Riverside Racing — type system
+   Titles (h1–h4) : Open Sans (matches the RacingClub.com heading font)
+   Body / UI      : Open Sans / Inter as per each element
+   Bundled locally in assets/fonts/ — no external font requests.
+   ========================================================================== */
+@font-face{font-family:"Open Sans";src:url('../fonts/open-sans-latin-wght-normal.woff2') format('woff2');font-weight:300 800;font-style:normal;font-display:swap}
+@font-face{font-family:"Open Sans";src:url('../fonts/open-sans-latin-wght-italic.woff2') format('woff2');font-weight:300 800;font-style:italic;font-display:swap}
+@font-face{font-family:"Inter";src:url('../fonts/inter-latin-variable.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
+
+/* Display headings: Open Sans */
+h1,h2,h3,h4,.hero h1,.inner-content h1,.new-home-hero h1,.story h2,.section-heading h2{letter-spacing:-.012em!important;font-feature-settings:"kern" 1,"liga" 1}
+h1,h2,h3{text-wrap:balance}
+/* Site-wide defaults: body copy and form controls in Inter, titles in Open Sans */
+html body,button,input,select,textarea{font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+h1,h2,h3,h4{font-family:"Open Sans",Arial,sans-serif}
+/* Bold titles (RacingClub-style 700). !important so section-level weights do not override */
+h1,h2,h3,h4,h1 em,h2 em,h3 em,h4 em,.ref-accordion summary{font-weight:700!important}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}

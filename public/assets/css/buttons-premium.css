@@ -1,0 +1,408 @@
+/* ==========================================================================
+   Premium buttons — Riverside Racing Syndicate
+   Loaded last on every page. Changes the look of buttons and button-style
+   links only. Layout, copy and colours of the rest of the page are untouched.
+   ========================================================================== */
+
+:root{
+  --btn-red-1:#b93a4b;
+  --btn-red-2:#8c2330;
+  --btn-navy-1:#1b3850;
+  --btn-navy-2:#081525;
+  --btn-ink:#ffffff;
+  --btn-ease:cubic-bezier(.2,.7,.2,1);
+}
+
+/* ---------- Shared base ---------- */
+.btn,
+.nav-action,
+.enquiry-submit,
+.ref-cta .btn,
+.inner-cta .btn{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  overflow:hidden;
+  isolation:isolate;
+  border-radius:999px;
+  border:1px solid transparent;
+  font-family:"Inter",Arial,sans-serif;
+  font-weight:700;
+  font-size:11.5px;
+  line-height:1;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  text-decoration:none;
+  white-space:nowrap;
+  cursor:pointer;
+  color:var(--btn-ink);
+  padding:18px 28px;
+  -webkit-font-smoothing:antialiased;
+  transition:transform .4s var(--btn-ease),box-shadow .4s var(--btn-ease),background-color .4s ease,color .3s ease,border-color .3s ease;
+}
+
+/* Soft light sweep on hover */
+.btn::before,
+.nav-action::before,
+.enquiry-submit::before,
+.ref-cta .btn::before,
+.inner-cta .btn::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.22) 50%,transparent 70%);
+  transform:translateX(-120%);
+  transition:transform .8s var(--btn-ease);
+}
+.btn:hover::before,
+.nav-action:hover::before,
+.enquiry-submit:hover::before,
+.ref-cta .btn:hover::before,
+.inner-cta .btn:hover::before{transform:translateX(120%)}
+
+/* Arrow / icon inside buttons */
+.btn svg,
+.nav-action svg,
+.ref-cta .btn svg,
+.inner-cta .btn svg{
+  width:16px;
+  height:16px;
+  flex:none;
+  stroke:currentColor;
+  transition:transform .4s var(--btn-ease);
+}
+.btn:hover svg,
+.nav-action:hover svg,
+.ref-cta .btn:hover svg,
+.inner-cta .btn:hover svg{transform:translateX(4px)}
+
+/* ---------- Primary (red) ---------- */
+.btn-red,
+.nav-action,
+.enquiry-submit{
+  background:linear-gradient(135deg,var(--btn-red-1) 0%,var(--btn-red-2) 100%);
+  border-color:rgba(255,255,255,.12);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.22),
+    inset 0 -1px 0 rgba(0,0,0,.18),
+    0 14px 26px -12px rgba(140,35,48,.65),
+    0 3px 8px rgba(140,35,48,.18);
+}
+.btn-red:hover,
+.nav-action:hover,
+.enquiry-submit:hover{
+  background:linear-gradient(135deg,#c44656 0%,#9a2a38 100%);
+  transform:translateY(-2px);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.26),
+    inset 0 -1px 0 rgba(0,0,0,.18),
+    0 20px 34px -12px rgba(140,35,48,.7),
+    0 6px 12px rgba(140,35,48,.2);
+}
+.btn-red:active,
+.nav-action:active,
+.enquiry-submit:active{transform:translateY(0);transition-duration:.12s}
+
+/* ---------- Secondary (navy) ---------- */
+.navy-btn{
+  background:linear-gradient(135deg,var(--btn-navy-1) 0%,var(--btn-navy-2) 100%);
+  border-color:rgba(255,255,255,.08);
+  color:var(--btn-ink);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.14),
+    0 14px 26px -12px rgba(8,21,37,.6),
+    0 3px 8px rgba(8,21,37,.16);
+}
+.navy-btn:hover{
+  background:linear-gradient(135deg,#24476a 0%,#0c1d32 100%);
+  transform:translateY(-2px);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.18),
+    0 20px 34px -12px rgba(8,21,37,.7),
+    0 6px 12px rgba(8,21,37,.2);
+}
+
+/* ---------- Light button on dark/red backgrounds (CTA banners) ---------- */
+.ref-cta .btn,
+.inner-cta .btn{
+  background:linear-gradient(180deg,#ffffff 0%,#f6f1ec 100%);
+  color:#152b3d;
+  border-color:rgba(255,255,255,.9);
+  box-shadow:0 16px 30px -14px rgba(0,0,0,.35),0 2px 6px rgba(0,0,0,.08);
+}
+.ref-cta .btn svg,
+.inner-cta .btn svg{color:var(--btn-red-2)}
+.ref-cta .btn:hover,
+.inner-cta .btn:hover{
+  background:linear-gradient(180deg,#ffffff 0%,#f7e9e8 100%);
+  color:#0f2438;
+  transform:translateY(-2px);
+  box-shadow:0 22px 36px -14px rgba(0,0,0,.42),0 4px 10px rgba(0,0,0,.1);
+}
+
+/* ---------- Text-style links & buttons ---------- */
+.text-bu,
+.text-button,
+.enquiry-story-link{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-family:"Inter",Arial,sans-serif;
+  font-weight:700;
+  font-size:11.5px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  text-decoration:none;
+  padding:6px 0;
+  transition:color .3s ease;
+}
+.text-bu::after,
+.text-button::after,
+.enquiry-story-link::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:1px;
+  background:currentColor;
+  transform:scaleX(.25);
+  transform-origin:left center;
+  transition:transform .45s var(--btn-ease);
+}
+.text-bu:hover::after,
+.text-button:hover::after,
+.enquiry-story-link:hover::after{transform:scaleX(1)}
+.text-button span{
+  display:inline-grid;
+  place-items:center;
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  font-size:14px;
+  box-shadow:0 6px 14px -6px rgba(0,0,0,.25);
+  transition:transform .4s var(--btn-ease);
+}
+.text-button:hover span{transform:translateY(2px)}
+
+
+/* Form submit keeps its original full-width, label-left / arrow-right layout */
+.enquiry-submit{justify-content:space-between;width:100%}
+
+/* ---------- Focus, reduced motion ---------- */
+.btn:focus-visible,
+.nav-action:focus-visible,
+.enquiry-submit:focus-visible,
+.text-bu:focus-visible,
+.text-button:focus-visible,
+.enquiry-story-link:focus-visible{
+  outline:2px solid #a6303e;
+  outline-offset:4px;
+}
+
+.enquiry-submit:disabled{opacity:.7;cursor:wait;transform:none;box-shadow:none}
+
+@media (prefers-reduced-motion:reduce){
+  .btn,.nav-action,.enquiry-submit,.navy-btn,.text-bu,.text-button,.enquiry-story-link,
+  .btn::before,.nav-action::before,.enquiry-submit::before,.btn svg,.nav-action svg,
+  .text-bu::after,.text-button::after,.enquiry-story-link::after,.text-button span{transition:none}
+}
+
+/* ---------- Mobile sizing ---------- */
+@media (max-width:700px){
+  .btn,.nav-action,.enquiry-submit,.ref-cta .btn,.inner-cta .btn{padding:16px 22px;font-size:11px;letter-spacing:.12em}
+}
+
+/* ==========================================================================
+   v2 — arrows sit inside a round badge; finer type and finish
+   ========================================================================== */
+.btn,
+.nav-action,
+.enquiry-submit{font-weight:600;letter-spacing:.16em}
+
+.btn:has(> svg),
+.nav-action:has(> svg),
+.enquiry-submit:has(> span){padding-right:7px;gap:14px}
+
+/* The arrow badge */
+.btn > svg,
+.nav-action > svg,
+.ref-cta .btn > svg,
+.inner-cta .btn > svg,
+.enquiry-submit > span{
+  display:inline-grid;
+  place-items:center;
+  width:34px;
+  height:34px;
+  padding:9px;
+  box-sizing:border-box;
+  flex:none;
+  border-radius:50%;
+  background:rgba(255,255,255,.16);
+  color:#fff;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.3),inset 0 1px 0 rgba(255,255,255,.35);
+  transition:background-color .4s var(--btn-ease),color .4s var(--btn-ease),box-shadow .4s var(--btn-ease),transform .4s var(--btn-ease);
+}
+.enquiry-submit > span{font-size:15px;line-height:1;text-transform:none;letter-spacing:0}
+
+/* Hover: badge turns white, arrow nudges forward */
+.btn-red:hover > svg,
+.nav-action:hover > svg,
+.enquiry-submit:hover > span{
+  background:#fff;
+  color:var(--btn-red-2);
+  box-shadow:0 6px 14px -4px rgba(0,0,0,.35);
+}
+.navy-btn:hover > svg{
+  background:#fff;
+  color:var(--btn-navy-1);
+  box-shadow:0 6px 14px -4px rgba(0,0,0,.35);
+}
+.btn:hover > svg{transform:translateX(3px)}
+
+/* Light CTA buttons: solid red badge with a white arrow */
+.ref-cta .btn > svg,
+.inner-cta .btn > svg{
+  background:linear-gradient(135deg,var(--btn-red-1) 0%,var(--btn-red-2) 100%)!important;
+  color:#fff!important;
+  stroke:#fff!important;
+  box-shadow:0 6px 14px -6px rgba(140,35,48,.7),inset 0 1px 0 rgba(255,255,255,.25);
+}
+.ref-cta .btn:hover > svg,
+.inner-cta .btn:hover > svg{background:#152b3d!important;color:#fff!important;box-shadow:0 6px 14px -6px rgba(8,21,37,.6)}
+
+@media (prefers-reduced-motion:reduce){
+  .btn > svg,.nav-action > svg,.enquiry-submit > span,.ref-cta .btn > svg,.inner-cta .btn > svg{transition:none}
+}
+
+/* ==========================================================================
+   v3 — compact, even button height (desktop 52px, mobile 50px)
+   ========================================================================== */
+body .btn,
+body .nav-action,
+body .enquiry-submit{
+  height:52px!important;
+  min-height:0;
+  padding:0 26px!important;
+  line-height:1;
+  box-sizing:border-box;
+}
+body .btn:has(> svg),
+body .nav-action:has(> svg),
+body .enquiry-submit:has(> span){
+  padding:0 9px 0 26px!important;
+  gap:14px;
+}
+body .btn > svg,
+body .nav-action > svg,
+body .ref-cta .btn > svg,
+body .inner-cta .btn > svg,
+body .enquiry-submit > span{
+  width:34px;
+  height:34px;
+  padding:9px;
+}
+@media (max-width:700px){
+  body .btn,
+  body .nav-action,
+  body .enquiry-submit{height:50px!important;padding:0 22px!important}
+  body .btn:has(> svg),
+  body .nav-action:has(> svg),
+  body .enquiry-submit:has(> span){padding:0 8px 0 24px!important}
+  body .btn > svg,
+  body .nav-action > svg,
+  body .ref-cta .btn > svg,
+  body .inner-cta .btn > svg,
+  body .enquiry-submit > span{width:32px;height:32px;padding:8px}
+}
+
+/* ==========================================================================
+   v4 — OUR HORSES cards: premium title + pill button with round arrow badge
+   ========================================================================== */
+html body .ref-horses .pop-card-body h3{
+  font-size:20px;
+  line-height:1.25;
+  letter-spacing:-.015em;
+  margin:20px 0 10px;
+  color:#0f2438;
+}
+html body .ref-horses .pop-card-body > a{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  width:100%;
+  height:52px;
+  margin-top:auto;
+  padding:0 8px 0 24px;
+  border:1px solid transparent;
+  border-radius:999px;
+  background:linear-gradient(135deg,var(--btn-red-1) 0%,var(--btn-red-2) 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.22),inset 0 -1px 0 rgba(0,0,0,.18),0 14px 26px -12px rgba(140,35,48,.65);
+  color:#fff;
+  font-family:"Inter",Arial,sans-serif;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.16em;
+  line-height:1;
+  text-transform:uppercase;
+  text-decoration:none;
+  white-space:nowrap;
+  overflow:hidden;
+  isolation:isolate;
+  transition:transform .4s var(--btn-ease),background .4s ease,box-shadow .4s var(--btn-ease);
+}
+html body .ref-horses .pop-card-body > a::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.22) 50%,transparent 70%);
+  transform:translateX(-120%);
+  transition:transform .8s var(--btn-ease);
+}
+html body .ref-horses .pop-card-body > a:hover::before{transform:translateX(120%)}
+html body .ref-horses .pop-card-body > a > span{
+  display:inline-grid;
+  place-items:center;
+  width:34px;
+  height:34px;
+  flex:none;
+  border:0;
+  border-radius:50%;
+  background:rgba(255,255,255,.16);
+  color:#fff!important;
+  font-family:"Inter",Arial,sans-serif;
+  font-size:15px;
+  font-weight:500;
+  letter-spacing:0;
+  line-height:1;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.3);
+  transition:background-color .4s var(--btn-ease),color .4s var(--btn-ease),transform .4s var(--btn-ease);
+}
+html body .ref-horses .pop-card-body > a:hover{
+  transform:translateY(-2px);
+  background:linear-gradient(135deg,var(--btn-navy-1) 0%,var(--btn-navy-2) 100%);
+  box-shadow:0 18px 30px -14px rgba(8,21,37,.7),inset 0 1px 0 rgba(255,255,255,.14);
+  color:#fff;
+}
+html body .ref-horses .pop-card-body > a:hover > span{
+  background:#fff!important;
+  color:var(--btn-navy-1)!important;
+  transform:translate(2px,-2px);
+  box-shadow:0 6px 14px -4px rgba(0,0,0,.3);
+}
+html body .ref-horses .pop-card-body > a:focus-visible{outline:2px solid #a6303e;outline-offset:4px}
+@media (max-width:700px){
+  html body .ref-horses .pop-card-body > a{height:50px;padding:0 8px 0 22px;font-size:10.5px}
+  html body .ref-horses .pop-card-body > a > span{width:32px;height:32px}
+  html body .ref-horses .pop-card-body h3{font-size:19px}
+}
+@media (prefers-reduced-motion:reduce){
+  html body .ref-horses .pop-card-body > a,html body .ref-horses .pop-card-body > a > span,html body .ref-horses .pop-card-body > a::before{transition:none}
+}

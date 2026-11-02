@@ -1,0 +1,50 @@
+/* ==========================================================================
+   Join popup — premium "Enquire to join" dialog shown after the visitor scrolls
+   ========================================================================== */
+.join-pop{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;padding:24px}
+.join-pop[hidden]{display:none}
+.join-pop-backdrop{position:absolute;inset:0;background:rgba(6,14,26,.66);-webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px);opacity:0;transition:opacity .5s ease}
+.join-pop-card{
+  position:relative;width:min(840px,100%);display:grid;grid-template-columns:1fr 1.05fr;
+  border-radius:24px;overflow:hidden;background:#0a182b;color:#fff;
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 60px 120px -30px rgba(0,0,0,.6),0 0 0 1px rgba(166,48,62,.18);
+  opacity:0;transform:translateY(26px) scale(.97);
+  transition:transform .65s cubic-bezier(.2,.7,.2,1),opacity .5s ease;
+}
+.join-pop.is-open .join-pop-backdrop{opacity:1}
+.join-pop.is-open .join-pop-card{opacity:1;transform:none}
+
+.join-pop-media{position:relative;min-height:380px;overflow:hidden}
+.join-pop-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:72% center;transform:scale(1.04);transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
+.join-pop.is-open .join-pop-media img{transform:scale(1)}
+.join-pop-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,24,43,0) 55%,#0a182b 100%),linear-gradient(180deg,rgba(10,24,43,0) 60%,rgba(10,24,43,.5) 100%)}
+
+.join-pop-body{position:relative;display:flex;flex-direction:column;justify-content:center;padding:52px 46px 46px 34px;background:radial-gradient(ellipse at 100% 0%,rgba(166,48,62,.22),transparent 55%),#0a182b}
+.join-pop-eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#e8898f;margin-bottom:18px}
+.join-pop-eyebrow::before{content:"";width:28px;height:1px;background:#e8898f}
+.join-pop h2{margin:0 0 14px;font-family:"Open Sans",Arial,sans-serif;font-weight:400;font-size:clamp(28px,3vw,38px);line-height:1.12;letter-spacing:-.02em;color:#fff}
+.join-pop h2 em{font-style:italic;color:#e8898f}
+.join-pop p{margin:0 0 30px;font-size:15px;line-height:1.7;color:rgba(255,255,255,.72);max-width:340px}
+.join-pop-actions{display:flex;align-items:center;flex-wrap:wrap;gap:18px}
+.join-pop .join-pop-cta{display:inline-flex;align-items:center;gap:12px;padding:16px 26px;border-radius:999px;background:linear-gradient(135deg,#c2394a,#8c2330);color:#fff;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;box-shadow:0 14px 30px -12px rgba(166,48,62,.8);transition:transform .3s ease,box-shadow .3s ease}
+.join-pop .join-pop-cta:hover{transform:translateY(-2px);box-shadow:0 18px 36px -12px rgba(166,48,62,.9)}
+.join-pop .join-pop-cta:focus-visible,.join-pop-close:focus-visible,.join-pop-later:focus-visible{outline:2px solid #e8898f;outline-offset:4px}
+.join-pop-later{background:none;border:0;padding:8px 2px;color:rgba(255,255,255,.66);font:500 13px/1 Inter,system-ui,sans-serif;letter-spacing:.02em;cursor:pointer;text-decoration:underline;text-underline-offset:5px;text-decoration-color:rgba(255,255,255,.3);transition:color .3s ease}
+.join-pop-later:hover{color:#fff}
+
+.join-pop-close{position:absolute;top:16px;right:16px;z-index:2;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.22);background:rgba(10,24,43,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#fff;font-size:22px;line-height:1;cursor:pointer;display:grid;place-items:center;transition:background .3s ease,transform .3s ease}
+.join-pop-close:hover{background:#a6303e;transform:rotate(90deg)}
+
+@media(max-width:720px){
+  .join-pop{padding:16px;align-items:end}
+  .join-pop-card{grid-template-columns:1fr;border-radius:20px;max-height:calc(100vh - 32px);overflow:auto}
+  .join-pop-media{min-height:170px}
+  .join-pop-media::after{background:linear-gradient(180deg,rgba(10,24,43,0) 40%,#0a182b 100%)}
+  .join-pop-body{padding:24px 24px 28px}
+  .join-pop h2{font-size:28px}
+  .join-pop p{margin-bottom:22px}
+}
+@media(prefers-reduced-motion:reduce){
+  .join-pop-backdrop,.join-pop-card,.join-pop-media img,.join-pop-close{transition:none!important}
+}

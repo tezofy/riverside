@@ -1,0 +1,38 @@
+/* ==========================================================================
+   "Let's get to know you" enquiry form — premium field icons
+   ========================================================================== */
+.enquiry-form-new .enq-wrap{position:relative;display:block}
+.enquiry-form-new .enq-wrap > input,
+.enquiry-form-new .enq-wrap > textarea{padding-left:50px!important}
+.enquiry-form-new .enq-ico{
+  position:absolute;
+  left:9px;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:1;
+  width:32px;
+  height:32px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:linear-gradient(135deg,#fbeeee 0%,#f3dcdd 100%);
+  color:#a6303e;
+  box-shadow:inset 0 0 0 1px rgba(166,48,62,.14);
+  pointer-events:none;
+  transition:background .3s ease,color .3s ease,box-shadow .3s ease;
+}
+.enquiry-form-new .enq-ico svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.enquiry-form-new .enq-wrap--area .enq-ico{top:17px;transform:none}
+/* active field: icon fills red */
+.enquiry-form-new .enq-wrap > input:focus + .enq-ico,
+.enquiry-form-new .enq-wrap > textarea:focus + .enq-ico{
+  background:linear-gradient(135deg,#b93a4b 0%,#8c2330 100%);
+  color:#fff;
+  box-shadow:0 6px 14px -4px rgba(140,35,48,.55);
+}
+@media (max-width:700px){
+  .enquiry-form-new .enq-ico{width:28px;height:28px;left:8px}
+  .enquiry-form-new .enq-ico svg{width:14px;height:14px}
+  .enquiry-form-new .enq-wrap > input,.enquiry-form-new .enq-wrap > textarea{padding-left:46px!important}
+}
+@media (prefers-reduced-motion:reduce){.enquiry-form-new .enq-ico{transition:none}}

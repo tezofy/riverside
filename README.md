@@ -1,95 +1,105 @@
 # Riverside Racing Syndicate
 
-A responsive, three-page static website for a thoroughbred racing syndicate. The pages, styles, scripts, images, and fonts are organized into separate files. No npm dependencies or build framework are required.
+A responsive, static website for a thoroughbred racing syndicate. Plain HTML, CSS and JavaScript. No npm packages, build tools or server are required.
+
+## Pages
+
+| File | Page |
+|---|---|
+| `public/index.html` | Home (hero slider, experience, our horses, FAQ, enquiry form) |
+| `public/about.html` | About us (story, mission, upcoming horses) |
+| `public/contact.html` | Contact (enquiry form: name, email, phone, optional message) |
+| `public/privacy.html` | Privacy policy (needs legal review before launch) |
+| `public/404.html` | Page shown for missing URLs (not indexed) |
 
 ## Project structure
 
-```text
-public/
-├── index.html                 # Home page
-├── about.html                 # About page
-├── contact.html               # Contact page
+```
+public/                        # the website (this is what gets deployed)
+├── index.html, about.html, contact.html, privacy.html, 404.html
+├── robots.txt, sitemap.xml
 └── assets/
-    ├── css/                   # Page and section styles
-    ├── js/                    # Form, navigation, slider, and animations
-    ├── images/                # Images and AI-generated icons
-    └── fonts/                 # Locally hosted fonts
-licenses/                      # Font license files
+    ├── css/                   # one stylesheet per layer (see note below)
+    ├── js/                    # form, navigation, hero slider, join popup, animations
+    ├── images/                # photos, AI-generated images and icons (WebP)
+    ├── video/                 # FAQ racing video (MP4)
+    └── fonts/                 # locally hosted fonts (Open Sans, Inter)
+licenses/                      # font licence files (SIL Open Font License 1.1)
+SETUP.md                       # handover guide for the client
 README.md
 ```
 
-The CSS files represent different design layers and updates. Keep the stylesheet order in each HTML file: later files may override earlier styles. The latest designs and animations include `horses-premium.css`, `experience-icons-upgrade.css`, `scroll-and-logo-motion.css`, and `icon-motion.css`.
+**Stylesheet order matters.** Each HTML file links its stylesheets in a fixed order; later files override earlier ones. Keep that order when editing. The `?v=` numbers on stylesheet links are cache-busters: increase the number after you change a CSS or JS file.
 
-## Upload to GitHub
+## Typography
 
-1. Extract the ZIP file.
-2. Create a new GitHub repository.
-3. Upload the `public` and `licenses` folders and `README.md` from inside the extracted folder to the root of the repository. Do not upload the ZIP itself as the website.
-4. Commit the files to the `main` branch. If you use a different branch, select that branch in Cloudflare Pages.
+- Titles (h1–h4): Open Sans, bold.
+- Body text, buttons and form fields: Inter.
+- Both fonts are bundled in `public/assets/fonts/`. No external font requests are made.
+
+## Enquiry forms
+
+The Home and Contact forms are **not yet connected to an inbox**. Create a form with Formspree (or a compatible service), verify the receiving address, then set the endpoint in `public/assets/js/app.js`:
+
+```js
+var FORM_ENDPOINT = 'https://formspree.io/f/your-form-id';
+```
+
+The value is empty until this is done, so visitors see a "temporarily unavailable" message. Test both forms after deployment and confirm the email arrives. Do not place secret API keys in browser-side files.
+
+## Before publishing
+
+- **Client details:** legal entity name, registered address, registration number, jurisdiction, and contact email/phone (footer, privacy policy and structured data).
+- **Privacy policy:** `public/privacy.html` is a draft and needs legal review.
+- **Social links:** footer Facebook, Instagram, YouTube and X icons are placeholders. Add real profile URLs to all pages when available.
+- **Imagery:** horse images and the racing video are AI-generated illustrations, not photographs of the syndicate's horses. Replace them with real photos when available, keeping the same filenames or updating the references.
+- **Domain:** the sitemap, robots.txt, canonical links, Open Graph URLs and structured data use `https://riverside-c27.pages.dev`. Replace this with the final domain everywhere before launch.
+- **Join popup:** opens once per browser session after the visitor scrolls about a third of the page. Confirm the wording and design with the client.
+
+## Editing
+
+- Page content: the `.html` files in `public/`. Keep the surrounding tags intact.
+- Styling: `public/assets/css/`.
+- Behaviour: `public/assets/js/`.
+- Images: `public/assets/images/`. If a filename changes, update every reference in the HTML and CSS.
+- The header, footer and join popup are repeated in each HTML page. Apply changes to every page.
+
+## Local preview
+
+From the repository root:
+
+```
+python3 -m http.server 8000 --directory public
+```
+
+Then open `http://localhost:8000`.
 
 ## Deploy with Cloudflare Pages
 
 1. In the Cloudflare dashboard, go to **Workers & Pages → Create application → Pages → Import an existing Git repository**.
-2. Connect GitHub and select the repository.
+2. Connect GitHub and select this repository.
 3. Use these build settings:
 
 | Setting | Value |
-| --- | --- |
+|---|---|
 | Framework preset | None |
-| Production branch | `main` (or your chosen branch) |
+| Production branch | `main` |
 | Build command | `exit 0` |
 | Build output directory | `public` |
-| Root directory | Leave blank / repository root |
+| Root directory | Leave blank (repository root) |
 
-4. Select **Save and Deploy**. Once the deployment succeeds, Cloudflare will provide a `*.pages.dev` address. Subsequent GitHub commits trigger new deployments.
-5. To use your own domain, open **Custom domains** in the Pages project and follow Cloudflare's DNS instructions.
+4. Select **Save and Deploy**. Later commits to `main` deploy automatically.
+5. For your own domain, open **Custom domains** in the Pages project and follow Cloudflare's DNS instructions.
 
 Cloudflare documentation: https://developers.cloudflare.com/pages/framework-guides/deploy-anything/
 
-## Before publishing
+## Upload to GitHub
 
-### Connect the enquiry forms
+1. Extract the ZIP file.
+2. Upload the contents of the extracted folder (`public/`, `licenses/`, `README.md`, `SETUP.md`) to the root of the repository, on the `main` branch.
+3. Do not upload the ZIP file itself as the website.
 
-The Home and Contact forms are not currently connected to an inbox. Create a form with Formspree or a compatible service and verify the receiving email address. Then open `public/assets/js/app.js`, find:
+## Licences
 
-```js
-const FORM_ENDPOINT = '';
-```
-
-Replace the empty value with your own verified HTTPS endpoint. For example:
-
-```js
-const FORM_ENDPOINT = 'https://formspree.io/f/your-form-id';
-```
-
-The URL above is only an example, not a working endpoint. After deployment, test both forms and confirm email delivery. Add an appropriate privacy notice, consent mechanism, and spam protection as needed. Do not put secret API keys in browser-side files.
-
-### Social links
-
-The Facebook, Instagram, YouTube, and X icons in the footer are placeholders. Add the actual profile URLs to all three HTML pages when available.
-
-### Branding and imagery
-
-The horse images are AI-generated illustrations, not actual syndicate horses. The Riverside name, logo, and horse statuses are concepts or placeholders. Replace or approve these assets and verify the content before publishing.
-
-### SEO
-
-Each page has its own HTML URL and description. Review the final domain, canonical URLs, sitemap, meta descriptions, and brand information before launch.
-
-## Editing
-
-- Edit page content in the three HTML files under `public/`.
-- Edit design styles in `public/assets/css/`.
-- Edit functionality in `public/assets/js/`.
-- Replace images in `public/assets/images/`. If a filename changes, update its references in the HTML and CSS files.
-- The header and footer are repeated in each HTML page. Apply any changes consistently across all three pages.
-
-## Local preview
-
-From the repository folder, run:
-
-```bash
-python3 -m http.server 8000 --directory public
-```
-
-Then open `http://localhost:8000` in your browser.
+- Open Sans and Inter are licensed under the SIL Open Font License 1.1. See `licenses/`.
+- Site code and content: © Riverside Racing Syndicate. Add the client's licence or copyright statement before publishing.

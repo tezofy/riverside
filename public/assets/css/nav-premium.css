@@ -1,0 +1,21 @@
+/* ==========================================================================
+   Main navigation — icons + activity states (all pages)
+   ========================================================================== */
+#navigation a{position:relative;display:inline-flex;align-items:center;gap:7px;white-space:nowrap;border-bottom:0;transition:color .25s ease}
+.nav-ic{display:inline-grid;place-items:center;width:20px;height:20px;flex:none;color:currentColor;opacity:.6;transition:opacity .25s ease,transform .4s cubic-bezier(.2,.7,.2,1),color .25s ease}
+.nav-ic svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+#navigation a::after{content:'';position:absolute;left:0;right:0;bottom:-8px;height:2px;border-radius:2px;background:linear-gradient(90deg,#a6303e,#d9737d);transform:scaleX(0);transform-origin:left center;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+#navigation a:hover,#navigation a.active{color:#a6303e}
+#navigation a:hover .nav-ic,#navigation a.active .nav-ic{opacity:1;color:#a6303e;transform:translateY(-2px)}
+#navigation a:hover::after,#navigation a.active::after{transform:scaleX(1)}
+#navigation a:focus-visible{outline:2px solid #a6303e;outline-offset:6px;border-radius:4px}
+#navigation a.active .nav-ic{animation:navPulse 2.4s ease-in-out infinite}
+@keyframes navPulse{0%,100%{transform:translateY(-2px) scale(1)}50%{transform:translateY(-2px) scale(1.12)}}
+@media (prefers-reduced-motion:reduce){#navigation a,#navigation a::after,.nav-ic{transition:none}#navigation a.active .nav-ic{animation:none}}
+/* Mobile dropdown: active item shows a left bar instead of underline */
+@media (max-width:950px){
+  #navigation a::after{display:none}
+  #navigation a{gap:12px}
+  #navigation a.active{box-shadow:inset 3px 0 0 #a6303e;padding-left:12px}
+  #navigation a.active .nav-ic{animation:none}
+}

@@ -1,0 +1,54 @@
+/* ==========================================================================
+   Premium interaction details adapted from a racing-ownership reference site:
+   - Horse cards: lift + image zoom + pill "view" action that fills on hover
+   - Primary buttons: arrow badge slides and the button gains a soft sheen
+   Colours, copy and layout stay Riverside's own.
+   ========================================================================== */
+
+/* ---------- Horse cards ---------- */
+.ref-faq ~ * .pop-card,
+.ref-horses .pop-card{
+  transition:transform .6s cubic-bezier(.2,.7,.2,1),box-shadow .6s ease,border-color .4s ease;
+}
+@media(hover:hover) and (pointer:fine){
+  .ref-horses .pop-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 34px 60px -30px rgba(10,24,43,.45),0 0 0 1px rgba(166,48,62,.12);
+  }
+  .ref-horses .pop-card:hover .horse-stage img{transform:scale(1.06)}
+  .ref-horses .pop-card .horse-stage img{transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+}
+/* the card's own link becomes a filled pill with an arrow badge */
+.ref-horses .pop-card-body > a{
+  display:inline-flex;align-items:center;gap:10px;margin-top:6px;
+  padding:11px 18px 11px 20px;border-radius:999px;
+  border:1px solid rgba(166,48,62,.28);color:#a6303e;
+  font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;
+  background:#fff;transition:background-color .35s ease,color .35s ease,border-color .35s ease,box-shadow .35s ease,padding .35s ease;
+}
+.ref-horses .pop-card-body > a > span{
+  display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;
+  background:rgba(166,48,62,.1);transition:background-color .35s ease,color .35s ease,transform .45s cubic-bezier(.2,.7,.2,1);
+}
+@media(hover:hover) and (pointer:fine){
+  .ref-horses .pop-card-body > a:hover{background:#a6303e;border-color:#a6303e;color:#fff;box-shadow:0 12px 24px -12px rgba(166,48,62,.7)}
+  .ref-horses .pop-card-body > a:hover > span{background:rgba(255,255,255,.2);color:#fff;transform:translate(2px,-2px)}
+}
+
+/* ---------- Primary buttons: arrow badge + sheen ---------- */
+.btn-red,.navy-btn{position:relative;overflow:hidden;isolation:isolate}
+.btn-red::after,.navy-btn::after{
+  content:"";position:absolute;top:0;bottom:0;left:-40%;width:35%;z-index:-1;pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.28),transparent);
+  transform:skewX(-18deg);transition:left .8s cubic-bezier(.2,.7,.2,1);
+}
+@media(hover:hover) and (pointer:fine){
+  .btn-red:hover::after,.navy-btn:hover::after{left:120%}
+  .btn-red:hover svg,.navy-btn:hover svg{transform:translateX(4px)}
+}
+.btn-red svg,.navy-btn svg{transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+
+@media(prefers-reduced-motion:reduce){
+  .ref-horses .pop-card,.ref-horses .pop-card .horse-stage img,.ref-horses .pop-card-body > a,.ref-horses .pop-card-body > a > span,.btn-red::after,.navy-btn::after,.btn-red svg,.navy-btn svg{transition:none!important}
+  .ref-horses .pop-card:hover{transform:none}
+}

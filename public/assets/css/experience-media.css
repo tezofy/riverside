@@ -1,0 +1,90 @@
+/* ==========================================================================
+   THE RIVERSIDE EXPERIENCE — card images (softly blurred, premium finish)
+   ========================================================================== */
+.ref-features .experience-card{overflow:hidden}
+.ref-features .experience-card-media{
+  position:relative;
+  margin:-26px -24px 22px;
+  height:156px;
+  overflow:hidden;
+  border-radius:16px 16px 0 0;
+  background:#dfe6e4;
+}
+.ref-features .experience-card-media img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transform:scale(1.08);
+  filter:blur(1.6px) saturate(1.06) brightness(1.02);
+  transition:transform 1.2s cubic-bezier(.2,.7,.2,1),filter .9s ease;
+}
+/* soft veil so the blur reads as a deliberate, frosted finish */
+.ref-features .experience-card-media::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,0) 40%),
+    linear-gradient(180deg,rgba(14,34,46,0) 45%,rgba(14,34,46,.35) 100%);
+  pointer-events:none;
+}
+.ref-features .experience-card:hover .experience-card-media img{
+  transform:scale(1.13);
+  filter:blur(.6px) saturate(1.1) brightness(1.04);
+}
+@media (max-width:700px){
+  .ref-features .experience-card-media{margin:-20px -16px 18px;height:120px}
+}
+@media (prefers-reduced-motion:reduce){
+  .ref-features .experience-card-media img{transition:none}
+}
+
+/* ---------- Compact cards: shorter image, icon overlaps the image edge, number sits on the image ---------- */
+.ref-features .experience-cards{align-items:stretch}
+.ref-features .experience-card{min-height:0;padding:0 24px 22px}
+.ref-features .experience-card-media{
+  height:118px;
+  margin:0 -24px;
+  border-radius:16px 16px 0 0;
+}
+.ref-features .experience-card-media .experience-number{
+  position:absolute;
+  top:12px;
+  right:12px;
+  z-index:2;
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(255,255,255,.92);
+  color:#9f3a45;
+  font:700 10px/1 "Inter",sans-serif;
+  letter-spacing:.1em;
+  box-shadow:0 4px 12px rgba(10,24,34,.18);
+}
+.ref-features .experience-card-top{
+  position:relative;
+  z-index:3;
+  margin-top:-38px;          /* half of the 76px icon sits over the image edge */
+  display:flex;
+  align-items:flex-start;
+}
+.ref-features .experience-card-top .experience-icon{
+  width:76px;
+  height:76px;
+  flex:0 0 76px;
+  box-shadow:0 10px 24px rgba(10,24,34,.16),0 0 0 6px #fff;
+}
+.ref-features .experience-card h3{margin:14px 0 8px;font-size:15px}
+.ref-features .experience-card p{margin:0 0 16px;line-height:1.65}
+.ref-features .experience-card a{padding-top:13px}
+
+@media (max-width:700px){
+  .ref-features .experience-card{padding:0 16px 18px}
+  .ref-features .experience-card-media{height:96px;margin:0 -16px;border-radius:14px 14px 0 0}
+  .ref-features .experience-card-media .experience-number{top:9px;right:9px;padding:5px 8px;font-size:9px}
+  .ref-features .experience-card-top{margin-top:-30px}
+  .ref-features .experience-card-top .experience-icon{width:60px;height:60px;flex:0 0 60px;box-shadow:0 8px 18px rgba(10,24,34,.16),0 0 0 4px #fff}
+  .ref-features .experience-card-top .experience-icon svg,.ref-features .experience-card-top .experience-icon img{width:28px;height:28px}
+  .ref-features .experience-card h3{font-size:13px;margin:12px 0 6px}
+  .ref-features .experience-card p{font-size:12px;margin-bottom:12px}
+}

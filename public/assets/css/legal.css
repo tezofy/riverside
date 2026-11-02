@@ -1,0 +1,10 @@
+/* Legal and utility pages (privacy policy, 404). Uses the site's existing colour tokens. */
+.legal-section{padding:clamp(56px,8vw,112px) 0;background:var(--paper)}
+.legal-content{max-width:780px}
+.legal-updated{color:var(--muted);font-size:14px;letter-spacing:.04em;margin:0 0 8px}
+.legal-content h2{font-family:"Open Sans",Arial,sans-serif;font-weight:600;font-size:clamp(20px,2.2vw,26px);line-height:1.25;color:var(--navy);margin:44px 0 12px}
+.legal-content p,.legal-content li{font-family:"Inter",Arial,sans-serif;font-size:17px;line-height:1.7;color:var(--text)}
+.legal-content ul{padding-left:20px;margin:0 0 16px}
+.legal-content li{margin-bottom:8px}
+.legal-content a{color:var(--red);text-decoration:underline;text-underline-offset:3px}
+.legal-content .btn{text-decoration:none}

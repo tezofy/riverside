@@ -1,0 +1,23 @@
+/* Mobile polish (loaded last). Desktop layout is not affected: every rule is scoped to narrow screens,
+   except the privacy note, which lays out the same way on all sizes. */
+
+/* Enquiry form privacy note: icon + one text block, link stays inline */
+.enquiry-privacy{display:flex;align-items:flex-start;gap:10px;justify-content:flex-start!important}
+.enquiry-privacy>span{flex:1 1 auto;min-width:0}
+.enquiry-privacy a{white-space:nowrap}
+
+@media (max-width:520px){
+  /* Header: logo, menu button and nothing else. The hero and page CTAs carry the enquiry action. */
+  .nav-wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .nav-wrap .nav-action{display:none!important}
+  .nav-wrap .menu-toggle{flex:none;margin-left:auto}
+  .nav-wrap .logo{min-width:0;flex:1 1 auto;overflow:hidden}
+  .nav-wrap .logo-icon img{width:44px!important;height:44px!important}
+  .nav-wrap .logo>span:not(.logo-icon){font-size:17px;line-height:1;letter-spacing:.02em;white-space:nowrap}
+  .nav-wrap .logo small{font-size:7px;letter-spacing:.14em}
+}
+
+/* Hero slide 5 (champion finish): on phones, frame the jockey and horse to the right of the headline */
+@media (max-width:700px){
+  .new-home-hero .hero-slide:nth-of-type(5){object-position:60% center}
+}
